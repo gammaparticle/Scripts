@@ -2,7 +2,7 @@
       
       mng_git_sshkeys.sh   
 
-#DEPENDANCIES
+#DEPENDENCIES
 
       ssh-agent must be installed.
       
