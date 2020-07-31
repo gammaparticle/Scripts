@@ -29,7 +29,7 @@ SCRIPT=`basename ${BASH_SOURCE[0]}`
 
 ## Functions
 function show_usage {
-    echo "Usage: ${SCRIPT} [-h] [-s] [-a] [-k] "
+    echo "Usage: . ./${SCRIPT} [-h] [-s] [-a] [-k] "
     echo "  ${SCRIPT} -h    Display this help message."
     echo "  ${SCRIPT} -s    Start ssh-agent."
     echo "  ${SCRIPT} -a    Add all ssh keys for GitHub accounts."
