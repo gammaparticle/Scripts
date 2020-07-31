@@ -3,7 +3,7 @@
 ###
 ###
 ### Purpose: Add Github SSH Key for given ID to ssh-agent.
-### Started: 2020/06/06 (tlj)
+### Started: 2020/06/06 (fynn)
 ###
 ### ######################################################
 
