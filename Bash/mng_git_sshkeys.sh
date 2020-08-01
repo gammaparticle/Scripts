@@ -21,8 +21,10 @@ SSH="/usr/bin/ssh"
 SSH_AGENT="/usr/bin/ssh-agent"
 SSH_ADD="/usr/bin/ssh-add"
 SSH_AGENT_PID=$(ps -C ssh-agent -o pid= | sed 's/^ *//g')
-SSH_KEY_ID_GAMMA="${HOME}/.ssh/id_rsa"
-SSH_KEY_ID_FYNN="${HOME}/.ssh/id_rsa_fynn"
+SSH_KEY_ID_1="${HOME}/.ssh/id_rsa"
+SSH_KEY_ID_2="${HOME}/.ssh/id_rsa_fynn"
+SSH_KEY_ID_3="${HOME}/.ssh/id_rsa_gitlab"
+SSH_KEY_ID_4="${HOME}/.ssh/id_rsa_gitlab_fynn"
 NUMARGS=${#}
 SCRIPT=`basename ${BASH_SOURCE[0]}`
 
@@ -38,16 +40,26 @@ function show_usage {
 
 function add_ssh_key_1 {
     echo "Adding ssh key (1)..."
-    ${SSH_ADD} ${SSH_KEY_ID_GAMMA}
+    ${SSH_ADD} ${SSH_KEY_ID_1}
     echo "Testing github.com ssh connection..."
     ${SSH} -T git@github.com
 }
 
 function add_ssh_key_2 {
     echo "Adding ssh key (2)..."
-    ${SSH_ADD} ${SSH_KEY_ID_FYNN}
+    ${SSH_ADD} ${SSH_KEY_ID_2}
     echo "Testing github.com-fynn ssh connection..."
     ${SSH} -T git@github.com-fynn
+}
+
+function add_ssh_key_3 {
+    echo "Adding ssh key (3)..."
+    ${SSH_ADD} ${SSH_KEY_ID_3}
+}
+
+function add_ssh_key_4 {
+    echo "Adding ssh key (4)..."
+    ${SSH_ADD} ${SSH_KEY_ID_4}
 }
 
 function add_ssh_keys {
@@ -56,6 +68,8 @@ function add_ssh_keys {
     else
         add_ssh_key_1
         add_ssh_key_2
+        add_ssh_key_3
+        add_ssh_key_4
     fi
 }
 
